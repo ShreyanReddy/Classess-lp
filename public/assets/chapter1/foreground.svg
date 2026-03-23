@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grassGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2e1a"/>
+      <stop offset="100%" stop-color="#0a140a"/>
+    </linearGradient>
+    <linearGradient id="grassNear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e1e0e"/>
+      <stop offset="100%" stop-color="#060c06"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rolling hills — far -->
+  <ellipse cx="360" cy="900" rx="500" ry="120" fill="url(#grassGrad)" opacity="0.7"/>
+  <ellipse cx="1080" cy="900" rx="480" ry="110" fill="url(#grassGrad)" opacity="0.65"/>
+  <ellipse cx="720" cy="920" rx="600" ry="100" fill="url(#grassGrad)" opacity="0.5"/>
+
+  <!-- Near ground strip -->
+  <rect x="0" y="820" width="1440" height="80" fill="url(#grassNear)" opacity="0.9"/>
+
+  <!-- Grass blades silhouette — left cluster -->
+  <g fill="#0e1e0e" opacity="0.8">
+    <path d="M40 820 Q45 790 50 820"/>
+    <path d="M55 820 Q62 785 68 820"/>
+    <path d="M72 820 Q78 800 84 820"/>
+    <path d="M90 820 Q96 788 102 820"/>
+    <path d="M108 820 Q114 792 120 820"/>
+    <path d="M126 820 Q131 796 136 820"/>
+    <path d="M142 820 Q148 782 154 820"/>
+    <path d="M160 820 Q166 794 172 820"/>
+  </g>
+
+  <!-- Grass blades — right cluster -->
+  <g fill="#0e1e0e" opacity="0.8">
+    <path d="M1280 820 Q1285 790 1290 820"/>
+    <path d="M1295 820 Q1302 785 1308 820"/>
+    <path d="M1312 820 Q1318 800 1324 820"/>
+    <path d="M1330 820 Q1336 788 1342 820"/>
+    <path d="M1348 820 Q1354 792 1360 820"/>
+    <path d="M1366 820 Q1371 796 1376 820"/>
+    <path d="M1382 820 Q1388 782 1394 820"/>
+    <path d="M1400 820 Q1406 794 1412 820"/>
+  </g>
+
+  <!-- Scattered mid grass -->
+  <g fill="#112011" opacity="0.6">
+    <path d="M500 840 Q506 808 512 840"/>
+    <path d="M518 840 Q524 812 530 840"/>
+    <path d="M700 835 Q706 800 712 835"/>
+    <path d="M718 835 Q724 804 730 835"/>
+    <path d="M920 842 Q926 810 932 842"/>
+    <path d="M938 842 Q944 806 950 842"/>
+  </g>
+</svg>

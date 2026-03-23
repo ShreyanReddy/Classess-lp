@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Custom Properties ─────────────────────────────────────────────── */
+:root {
+  --scrollbar-width: 0px;
+}
+
+/* ─── Base Reset ─────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #080e1c; /* match dark sky base */
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Layer System ───────────────────────────────────────────────────────── */
+.layer {
+  position: absolute;
+  inset: 0;
+  will-change: transform, opacity;
+  transform: translateZ(0); /* Force GPU composite layer */
+  backface-visibility: hidden;
+}
+
+.layer-background { z-index: 10; }
+.layer-midground  { z-index: 20; }
+.layer-foreground { z-index: 30; }
+.layer-character  { z-index: 40; }
+.layer-ui         { z-index: 50; }
+
+/* ─── Chapter Wrapper ────────────────────────────────────────────────────── */
+.chapter-wrapper {
+  position: absolute;
+  inset: 0;
+}
+
+/* ─── Scrollbar Hide ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* ─── Selection ──────────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    <radialGradient id="sunCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff5d0"/>
+      <stop offset="40%" stop-color="#ffd580"/>
+      <stop offset="100%" stop-color="#ff8c00" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffb347" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#ff8c00" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ff6600" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="horizonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f5c07a" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#f5c07a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sunBloom" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Wide atmospheric horizon bloom -->
+  <ellipse cx="720" cy="760" rx="700" ry="220" fill="url(#horizonGlow)" opacity="0.6"/>
+
+  <!-- Sun glow aura -->
+  <circle cx="720" cy="720" r="240" fill="url(#sunGlow)" filter="url(#sunBloom)"/>
+
+  <!-- Sun body — sits at horizon line -->
+  <circle cx="720" cy="720" r="80" fill="url(#sunCore)"/>
+
+  <!-- Lens flare streaks (subtle) -->
+  <line x1="720" y1="540" x2="720" y2="700" stroke="#fff5d0" stroke-width="1" opacity="0.15"/>
+  <line x1="560" y1="720" x2="700" y2="720" stroke="#fff5d0" stroke-width="1" opacity="0.10"/>
+  <line x1="740" y1="720" x2="880" y2="720" stroke="#fff5d0" stroke-width="1" opacity="0.10"/>
+</svg>
