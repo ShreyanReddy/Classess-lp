@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Classess AI — Give every student a day like this.">
+  <title>Classess AI</title>
+
+  <!-- ── Fonts ───────────────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- ── CSS ─────────────────────────────────────────────────── -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components/glass-nav.css">
+  <link rel="stylesheet" href="css/components/feature-cards.css">
+  <link rel="stylesheet" href="css/components/comprehension-ring.css">
+  <link rel="stylesheet" href="css/components/waveform.css">
+  <link rel="stylesheet" href="css/chapters/ch0-prelude.css">
+  <link rel="stylesheet" href="css/chapters/ch1-sunrise.css">
+  <link rel="stylesheet" href="css/chapters/ch2-bedroom.css">
+  <link rel="stylesheet" href="css/chapters/ch3-walk-morning.css">
+  <link rel="stylesheet" href="css/chapters/ch4-classroom.css">
+  <link rel="stylesheet" href="css/chapters/ch5-walk-afternoon.css">
+  <link rel="stylesheet" href="css/chapters/ch6-homework.css">
+  <link rel="stylesheet" href="css/chapters/ch7-night-walk.css">
+  <link rel="stylesheet" href="css/chapters/ch8-cliff.css">
+  <link rel="stylesheet" href="css/chapters/ch9-footer.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════
+       GLOBAL INFRASTRUCTURE
+  ══════════════════════════════════════════════════════════════ -->
+
+  <!-- Loader line -->
+  <div id="loader-line"></div>
+
+  <!-- Custom cursor -->
+  <div id="cur" aria-hidden="true"></div>
+  <div id="cur-ring" aria-hidden="true"></div>
+
+  <!-- Particle canvas -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- Scroll hint -->
+  <div id="scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <div id="scroll-hint-line"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       GLASS NAV
+  ══════════════════════════════════════════════════════════════ -->
+  <nav class="gnav" id="gnav" aria-label="Main navigation">
+    <a href="/" class="gnav-logo" aria-label="Classess AI — home">
+      <span class="gnav-logo-word">Classess</span>
+      <span class="gnav-logo-ai">AI</span>
+    </a>
+    <div class="gnav-links">
+      <a href="/features">Features</a>
+      <a href="/schools">For Schools</a>
+      <a href="/about">About</a>
+    </div>
+    <a href="#" class="gnav-cta">Start for free →</a>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════════
+       CHAPTER 0 — PRELUDE
+       White screen with frosted logo. Time-based, not scroll.
+  ══════════════════════════════════════════════════════════════ -->
+  <div id="ch0" role="presentation" aria-hidden="true">
+    <div class="ch0-logo">
+      <span class="ch0-logo-word">Classess</span>
+      <span class="ch0-logo-ai">AI</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       MAIN SCROLL CONTENT
+  ══════════════════════════════════════════════════════════════ -->
+  <main id="scroll-container">
+
+    <!-- ────────────────────────────────────────────────────────
+         CHAPTER 1 — HAWAIIAN SUNRISE  (380vh)
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch1" class="chapter chapter-sticky" aria-label="Chapter 1 — Hawaiian Sunrise">
+      <div class="sticky-inner">
+        <div class="p-world" id="p-world-ch1">
+
+          <!-- Layer 1: Sky + Arcs + Sun -->
+          <div class="p-layer" id="l-sky" data-px="7" data-py="4"></div>
+
+          <!-- Layer 2: Clouds -->
+          <div class="p-layer" id="l-clouds" data-px="14" data-py="6"></div>
+
+          <!-- Layer 3: Far Mountains -->
+          <div class="p-layer" id="l-mf" data-px="22" data-py="11"></div>
+
+          <!-- Layer 4: Mid Mountains -->
+          <div class="p-layer" id="l-mm" data-px="36" data-py="18"></div>
+
+          <!-- Layer 5: Near Hills + Path -->
+          <div class="p-layer" id="l-hills" data-px="50" data-py="25"></div>
+
+          <!-- Layer 6: Ground + Farmhouse + Cattle -->
+          <div class="p-layer" id="l-ground" data-px="65" data-py="30"></div>
+
+          <!-- Layer 7: Trees -->
+          <div class="p-layer" id="l-trees" data-px="82" data-py="38"></div>
+
+          <!-- Layer 8: Foreground Grass + Trunks -->
+          <div class="p-layer" id="l-fg" data-px="100" data-py="46"></div>
+
+        </div><!-- /p-world-ch1 -->
+
+        <!-- Clem standing idle in Chapter 1 -->
+        <div id="clem-ch1" style="position:absolute;bottom:26%;left:50%;transform:translateX(-50%);z-index:90;"></div>
+
+        <!-- Ch1 scene copy -->
+        <div id="ch1-copy" class="frosted-copy" style="opacity:0;"></div>
+
+      </div><!-- /sticky-inner -->
+    </section><!-- /ch1 -->
+
+    <!-- ────────────────────────────────────────────────────────
+         CHAPTER 2 — CLEM'S ROOM MORNING  (250vh)
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch2" class="chapter chapter-sticky" aria-label="Chapter 2 — Morning Routine">
+      <div class="sticky-inner">
+
+        <!-- Flash overlay for window zoom transition -->
+        <div id="ch2-zoom-overlay"></div>
+
+        <!-- Room SVG container -->
+        <div id="ch2-room"></div>
+
+        <!-- Window showing live Ch1 world (subset) -->
+        <div id="ch2-window-world"></div>
+
+        <!-- Clem seated -->
+        <div id="clem-ch2"></div>
+
+        <!-- Scene: 2.1 — Timestamp -->
+        <div class="frosted-copy ch2-timestamp" id="ch2-s1-ts" style="opacity:0;">
+          <span class="fc-timestamp">6:32 AM — Clem's room</span>
+        </div>
+
+        <!-- Scene: 2.2 — Headline -->
+        <div class="ch2-headline" id="ch2-s2-hl" style="opacity:0;">
+          <p class="frosted-headline">Start your day with your daily learning schedule</p>
+        </div>
+
+        <!-- Feature card: AI Morning Digest -->
+        <div class="feature-card" id="fc-ch2-1" style="top:30%;right:48px;">
+          <div class="fc-label">✦ AI Morning Digest</div>
+          <div class="fc-title">Your day, prepared</div>
+          <div class="fc-desc">Classess reviews your schedule and surfaces what matters most before your first class.</div>
+        </div>
+
+        <!-- Feature card: Gap Detection -->
+        <div class="feature-card" id="fc-ch2-2" style="top:40%;right:48px;">
+          <div class="fc-label">✦ Gap Detection</div>
+          <div class="fc-title">Know what to focus on</div>
+          <div class="fc-desc">Classess identifies exactly where understanding fell short and surfaces it the next morning.</div>
+        </div>
+
+        <!-- Feature card: Personalised Daily Arc -->
+        <div class="feature-card" id="fc-ch2-3" style="top:50%;right:48px;">
+          <div class="fc-label">✦ Personalised Daily Arc</div>
+          <div class="fc-title">Today's plan is yours</div>
+          <div class="fc-desc">Every day is different. Your Classess timeline is built around you.</div>
+        </div>
+
+        <!-- Scene: 2.3 — Gap detection copy -->
+        <div class="frosted-copy" id="ch2-s3-copy" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;opacity:0;max-width:480px;padding:16px 24px;">
+          <p class="scene-copy">"You almost had it yesterday. Today's the day it clicks."</p>
+        </div>
+
+        <!-- Scene: 2.5 — Ready -->
+        <div id="ch2-s5-ready" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;opacity:0;">
+          <p style="font-size:var(--type-title);font-weight:800;letter-spacing:-0.03em;color:#FFFFFF;">Ready.</p>
+        </div>
+
+      </div>
+    </section><!-- /ch2 -->
+
+    <!-- ────────────────────────────────────────────────────────
+         CHAPTER 3 — MORNING WALK  (300vh)
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch3" class="chapter chapter-sticky" aria-label="Chapter 3 — Morning Walk">
+      <div class="sticky-inner">
+
+        <div id="ch3-world">
+          <div class="walk-layer walk-layer--sky"    id="ch3-l-sky"></div>
+          <div class="walk-layer walk-layer--mtn"    id="ch3-l-mtn"></div>
+          <div class="walk-layer walk-layer--hills"  id="ch3-l-hills"></div>
+          <div class="walk-layer walk-layer--ground" id="ch3-l-ground"></div>
+          <div class="walk-layer walk-layer--trees"  id="ch3-l-trees"></div>
+          <div class="walk-layer walk-layer--fg"     id="ch3-l-fg"></div>
+        </div>
+
+        <!-- Clem walking -->
+        <div id="clem-walk"></div>
+
+        <!-- Waveforms -->
+        <div id="ch3-waveforms">
+          <svg class="waveform waveform-left" id="wf-left" viewBox="0 0 260 80" width="260" height="80" aria-hidden="true">
+            <path class="wf-path" id="wf-left-path" d=""/>
+          </svg>
+          <svg class="waveform waveform-right" id="wf-right" viewBox="0 0 260 80" width="260" height="80" aria-hidden="true">
+            <path class="wf-path" id="wf-right-path" d=""/>
+          </svg>
+        </div>
+
+        <!-- AI companions -->
+        <div id="ai-companion-left"  aria-hidden="true"></div>
+        <div id="ai-companion-right" aria-hidden="true"></div>
+
+        <!-- School building (appears end of ch3) -->
+        <div id="school-building"></div>
+
+        <!-- Scene copy -->
+        <div class="frosted-copy ch3-timestamp" id="ch3-s1-ts">
+          <span class="fc-timestamp">7:15 AM — On the way</span>
+        </div>
+
+        <div class="ch3-headline" id="ch3-s2-hl">
+          <p class="frosted-headline">Start your day with your daily learning schedule</p>
+        </div>
+
+        <!-- Feature card: AI Morning Audio Brief -->
+        <div class="feature-card" id="fc-ch3-1" style="left:48px;top:30%;">
+          <div class="fc-label">✦ AI Morning Audio Brief</div>
+          <div class="fc-title">Listen on the way</div>
+          <div class="fc-desc">A personalised audio summary of today's classes, gaps, and what to watch for.</div>
+        </div>
+
+        <!-- Pre-class copy -->
+        <div class="frosted-copy" id="ch3-s3-copy" style="position:absolute;left:var(--sp-6);top:50%;transform:translateY(-50%);max-width:420px;opacity:0;padding:20px 24px;">
+          <p class="scene-copy">"Today: Algebra at 9, History essay review at 11, Lab at 2."<br><br>"You're strong on two of three. Let's talk about History."</p>
+        </div>
+
+        <!-- Feature card: Pre-Class Intelligence -->
+        <div class="feature-card" id="fc-ch3-2" style="left:48px;top:32%;">
+          <div class="fc-label">✦ Pre-Class Intelligence</div>
+          <div class="fc-title">Walk in prepared</div>
+          <div class="fc-desc">Know exactly where you stand before you sit down. Every time.</div>
+        </div>
+
+        <!-- Scene 3.4 center copy -->
+        <div class="ch3-center-copy" id="ch3-s4-copy">
+          <p class="frosted-headline">"You already know more than you think."</p>
+        </div>
+
+        <!-- Scene 3.5 -->
+        <div class="frosted-copy ch3-timestamp" id="ch3-s5-ts" style="position:absolute;bottom:var(--sp-7);left:var(--sp-6);">
+          <span class="fc-timestamp">7:58 AM — Almost there</span>
+        </div>
+
+      </div>
+    </section><!-- /ch3 -->
+
+    <!-- ────────────────────────────────────────────────────────
+         CHAPTER 3→4 TRANSITION  (80vh)
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch3to4" class="chapter" style="height:80vh;" aria-hidden="true">
+      <div class="sticky-inner">
+        <div id="ch3to4-scene" style="position:absolute;inset:0;"></div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────
+         CHAPTER 4 — OUTDOOR CLASSROOM  (400vh)
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch4" class="chapter chapter-sticky" aria-label="Chapter 4 — Classroom">
+      <div class="sticky-inner">
+
+        <!-- Classroom SVG scene -->
+        <div id="ch4-scene"></div>
+
+        <!-- Comprehension rings (injected by ch4.js) -->
+        <div id="ch4-rings"></div>
+
+        <!-- Scene copy -->
+        <div class="frosted-copy ch4-timestamp" id="ch4-s1-ts">
+          <span class="fc-timestamp">9:04 AM — Class begins</span>
+        </div>
+
+        <div class="ch4-headline" id="ch4-s2-hl">
+          <p class="scene-headline">In-class<br>engagement</p>
+        </div>
+
+        <!-- Feature card: Live Comprehension Tracking -->
+        <div class="feature-card" id="fc-ch4-1" style="left:48px;top:35%;">
+          <div class="fc-label">✦ Live Comprehension Tracking</div>
+          <div class="fc-title">Every student, every moment</div>
+          <div class="fc-desc">Real-time signals from every student, surfaced quietly to the teacher.</div>
+        </div>
+
+        <!-- Feature card: Real-Time Teacher Intelligence -->
+        <div class="feature-card" id="fc-ch4-2" style="left:48px;top:45%;">
+          <div class="fc-label">✦ Real-Time Teacher Intelligence</div>
+          <div class="fc-title">The teacher sees everything</div>
+          <div class="fc-desc">Comprehension, engagement, confusion — all in one glance. No interruption required.</div>
+        </div>
+
+        <!-- Scene 4.6 center copy -->
+        <div class="ch4-center-copy" id="ch4-s6-copy">
+          <p class="frosted-headline">Every student. Every moment. Every insight.</p>
+        </div>
+
+      </div>
+    </section><!-- /ch4 -->
+
+    <!-- ────────────────────────────────────────────────────────
+         CHAPTER 5 — AFTERNOON WALK  (280vh)
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch5" class="chapter chapter-sticky" aria-label="Chapter 5 — Post-Class">
+      <div class="sticky-inner">
+
+        <div id="ch5-world">
+          <div class="walk-layer walk-layer--sky"    id="ch5-l-sky"></div>
+          <div class="walk-layer walk-layer--mtn"    id="ch5-l-mtn"></div>
+          <div class="walk-layer walk-layer--hills"  id="ch5-l-hills"></div>
+          <div class="walk-layer walk-layer--ground" id="ch5-l-ground"></div>
+          <div class="walk-layer walk-layer--trees"  id="ch5-l-trees"></div>
+          <div class="walk-layer walk-layer--fg"     id="ch5-l-fg"></div>
+        </div>
+
+        <!-- Clem walking afternoon -->
+        <div id="clem-walk-5" style="position:absolute;bottom:28%;left:50%;transform:translateX(-50%);z-index:90;"></div>
+
+        <!-- Data card track -->
+        <div class="data-card-track" id="ch5-cards"></div>
+
+        <!-- Focus card -->
+        <div class="focus-card" id="ch5-focus-card">
+          <div class="focus-card-title">Focus tonight</div>
+          <div class="focus-card-body">History — cause and effect</div>
+        </div>
+
+        <!-- Scene copy -->
+        <div class="frosted-copy ch5-timestamp" id="ch5-s1-ts">
+          <span class="fc-timestamp">11:45 AM — Class done</span>
+        </div>
+
+        <!-- Feature card: Post-Class Intelligence -->
+        <div class="feature-card" id="fc-ch5-1" style="right:48px;top:30%;">
+          <div class="fc-label">✦ Post-Class Intelligence</div>
+          <div class="fc-title">Know before you leave the room</div>
+          <div class="fc-desc">Classess analyses what just happened and builds your next steps before the bell stops ringing.</div>
+        </div>
+
+        <!-- Feature card: Personalised Focus Guide -->
+        <div class="feature-card" id="fc-ch5-2" style="right:48px;top:40%;">
+          <div class="fc-label">✦ Personalised Focus Guide</div>
+          <div class="fc-title">One thing. Tonight.</div>
+          <div class="fc-desc">Not a list of everything. One specific thing to close the gap — chosen for you.</div>
+        </div>
+
+        <!-- Scene 5.5 center copy -->
+        <div class="ch5-center-copy" id="ch5-s5-copy">
+          <p class="frosted-headline">Know exactly where you stand. Always.</p>
+        </div>
+
+      </div>
+    </section><!-- /ch5 -->
+
+    <!-- ────────────────────────────────────────────────────────
+         CHAPTER 6 — HOMEWORK & AI TUTOR  (300vh)
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch6" class="chapter chapter-sticky" aria-label="Chapter 6 — Homework">
+      <div class="sticky-inner">
+
+        <div id="ch6-room"></div>
+
+        <!-- Clem seated (evening) -->
+        <div id="clem-ch6"></div>
+
+        <!-- Comprehension ring for Clem (returns here) -->
+        <div id="ch6-ring" class="comp-ring-wrap" style="position:absolute;top:0;left:0;"></div>
+
+        <!-- AI response float container -->
+        <div id="ch6-ai-responses" style="position:absolute;inset:0;pointer-events:none;z-index:100;overflow:hidden;"></div>
+
+        <!-- Clem speech bubble -->
+        <div class="clem-speech-bubble" id="ch6-bubble">?</div>
+
+        <!-- Scene copy -->
+        <div class="frosted-copy ch6-timestamp" id="ch6-s1-ts">
+          <span class="fc-timestamp">4:15 PM — Home</span>
+        </div>
+
+        <div class="ch6-headline" id="ch6-s2-hl">
+          <p class="scene-headline">Homework.<br>AI Tutor.</p>
+        </div>
+
+        <!-- Feature card: AI Tutor -->
+        <div class="feature-card" id="fc-ch6-1" style="right:48px;top:30%;">
+          <div class="fc-label">✦ AI Tutor</div>
+          <div class="fc-title">Exactly where you left off</div>
+          <div class="fc-desc">Classess picks up from your last session and goes straight to what matters.</div>
+        </div>
+
+        <!-- Feature card: Gap Closing -->
+        <div class="feature-card" id="fc-ch6-2" style="right:48px;top:42%;">
+          <div class="fc-label">✦ Gap Closing</div>
+          <div class="fc-title">Fill in what school missed</div>
+          <div class="fc-desc">Targeted explanations that reach the exact point of confusion — nothing more.</div>
+        </div>
+
+        <!-- Feature card: Always Available -->
+        <div class="feature-card" id="fc-ch6-3" style="right:48px;top:54%;">
+          <div class="fc-label">✦ Always Available</div>
+          <div class="fc-title">4am. Sunday night. Any time.</div>
+          <div class="fc-desc">The best tutor doesn't have a schedule. It's there when you need it.</div>
+        </div>
+
+        <!-- Scene 6.5 — completion -->
+        <div class="ch6-completion-copy" id="ch6-s5-copy">He understood it.</div>
+
+      </div>
+    </section><!-- /ch6 -->
+
+    <!-- ────────────────────────────────────────────────────────
+         CHAPTER 7 — REFLECTION / NIGHT WALK  (320vh)
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch7" class="chapter chapter-sticky" aria-label="Chapter 7 — Reflection">
+      <div class="sticky-inner">
+
+        <div id="ch7-world"></div>
+
+        <!-- Clem walking (night) -->
+        <div id="clem-walk-7" style="position:absolute;bottom:28%;left:50%;transform:translateX(-50%);z-index:90;"></div>
+
+        <!-- Memory silhouettes (injected by ch7.js) -->
+        <div id="ch7-memories" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div>
+
+        <!-- Tomorrow cards (injected by ch7.js) -->
+        <div id="ch7-tomorrow" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:var(--z-ui);"></div>
+
+        <!-- Constellation -->
+        <div id="constellation" aria-hidden="true"></div>
+
+        <!-- Scene copy -->
+        <div class="frosted-copy ch7-timestamp" id="ch7-s1-ts">
+          <span class="fc-timestamp">9:00 PM — End of day</span>
+        </div>
+
+        <div class="ch7-reflection-word" id="ch7-s3-hl">Reflection.</div>
+
+      </div>
+    </section><!-- /ch7 -->
+
+    <!-- ────────────────────────────────────────────────────────
+         CHAPTER 8 — THE CLIFF (CTA)  (280vh)
+         Emotional peak. Clem is fixed. Title takes 3.0s.
+    ──────────────────────────────────────────────────────────── -->
+    <section id="ch8" class="chapter chapter-sticky" aria-label="Chapter 8 — Classess AI">
+      <div class="sticky-inner">
+
+        <!-- Phase 1: still in night walk -->
+        <div id="ch8-phase-walk"></div>
+
+        <!-- Phase 2+: cliff composition -->
+        <div id="ch8-phase-cliff">
+          <div id="ch8-sky"></div>
+        </div>
+
+        <!-- Title — fades in at 3.0s (non-negotiable) -->
+        <div id="ch8-title" aria-label="Classess AI">
+          <span class="ch8-title-word">Classess <span class="ch8-title-ai">AI</span></span>
+        </div>
+
+        <!-- CTA -->
+        <div id="ch8-cta">
+          <p class="ch8-tagline">Give every student a day like this.</p>
+          <a href="#" class="ch8-cta-btn" role="button">Start for free →</a>
+        </div>
+
+      </div>
+    </section><!-- /ch8 -->
+
+    <!-- Clem cliff silhouette — position:fixed, survives into ch9 -->
+    <div id="clem-cliff" aria-hidden="true"></div>
+
+  </main><!-- /scroll-container -->
+
+  <!-- ══════════════════════════════════════════════════════════
+       CHAPTER 9 — THE STARS (FOOTER)  (180vh)
+  ══════════════════════════════════════════════════════════════ -->
+  <section id="ch9" aria-label="Footer">
+    <div id="ch9-tilt">
+      <div id="ch9-scene">
+
+        <!-- Star field -->
+        <div id="ch9-starfield" aria-hidden="true"></div>
+
+        <!-- Footer content -->
+        <footer id="ch9-footer">
+
+          <div class="footer-logo">
+            <span class="footer-logo-word">Classess</span>
+            <span class="footer-logo-ai">AI</span>
+          </div>
+
+          <!-- Dotted divider -->
+          <svg class="footer-divider" height="1" aria-hidden="true" preserveAspectRatio="none">
+            <line x1="0" y1="0" x2="100%" y2="0"/>
+          </svg>
+
+          <nav class="footer-links" aria-label="Footer navigation">
+            <div class="footer-col">
+              <div class="footer-col-title">Product</div>
+              <a href="/features">Features</a>
+              <a href="/schools">For Schools</a>
+              <a href="/students">For Students</a>
+            </div>
+            <div class="footer-col">
+              <div class="footer-col-title">Company</div>
+              <a href="/about">About</a>
+              <a href="/blog">Blog</a>
+              <a href="/careers">Careers</a>
+            </div>
+            <div class="footer-col">
+              <div class="footer-col-title">Legal</div>
+              <a href="/privacy">Privacy</a>
+              <a href="/terms">Terms</a>
+              <a href="/contact">Contact</a>
+            </div>
+          </nav>
+
+          <!-- Dotted divider -->
+          <svg class="footer-divider" height="1" aria-hidden="true" preserveAspectRatio="none">
+            <line x1="0" y1="0" x2="100%" y2="0"/>
+          </svg>
+
+          <div class="footer-bottom">
+            <p class="footer-copyright">© 2025 Classess AI · Built for every student. Every day.</p>
+          </div>
+
+          <!-- The final line. For the ones who scroll all the way. -->
+          <p id="final-line">Clem had a good day.</p>
+
+        </footer>
+
+      </div><!-- /ch9-scene -->
+    </div><!-- /ch9-tilt -->
+  </section><!-- /ch9 -->
+
+  <!-- ══════════════════════════════════════════════════════════
+       SCRIPTS — order matters
+  ══════════════════════════════════════════════════════════════ -->
+
+  <!-- Dependencies (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+
+  <!-- Infrastructure -->
+  <script src="js/lenis-init.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/parallax.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/clem.js"></script>
+
+  <!-- Chapter logic -->
+  <script src="js/chapters/ch0.js"></script>
+  <script src="js/chapters/ch1.js"></script>
+  <script src="js/chapters/ch2.js"></script>
+  <script src="js/chapters/ch3.js"></script>
+  <script src="js/chapters/ch4.js"></script>
+  <script src="js/chapters/ch5.js"></script>
+  <script src="js/chapters/ch6.js"></script>
+  <script src="js/chapters/ch7.js"></script>
+  <script src="js/chapters/ch8.js"></script>
+  <script src="js/chapters/ch9.js"></script>
+  <script src="js/chapters/ch3to4-transition.js"></script>
+
+  <!-- Scroll engine (orchestrator — must come after chapter scripts) -->
+  <script src="js/scroll-engine.js"></script>
+
+  <!-- Main entry (kicks everything off) -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

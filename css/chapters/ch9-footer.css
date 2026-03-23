@@ -1,0 +1,172 @@
+/* ============================================================
+   CLASSESS AI — CHAPTER 9: THE STARS (FOOTER)
+   180vh, camera tilts upward, stars become footer background
+   ============================================================ */
+
+#ch9 {
+  height: 180vh;
+  background: var(--night-sky);
+}
+
+/* ── Camera Tilt Container ────────────────────────────────── */
+
+#ch9-tilt {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* The scene slides DOWN (camera tilts up) as user scrolls */
+#ch9-scene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;  /* Extra height for the tilt travel */
+  will-change: transform;
+}
+
+/* ── Star Field ───────────────────────────────────────────── */
+
+#ch9-starfield {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+/* ── Footer Content ───────────────────────────────────────── */
+
+#ch9-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--sp-7) var(--sp-6) var(--sp-5);
+  z-index: var(--z-ui);
+  text-align: center;
+}
+
+/* ── Footer Logo ──────────────────────────────────────────── */
+
+.footer-logo {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: var(--sp-5);
+  opacity: 0;
+  will-change: opacity;
+}
+
+.footer-logo-word {
+  font-family: var(--font);
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+}
+
+.footer-logo-ai {
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--text-tertiary);
+}
+
+/* ── Dotted Divider ───────────────────────────────────────── */
+
+.footer-divider {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto var(--sp-5);
+  height: 1px;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.footer-divider line {
+  stroke: rgba(255,255,255,0.18);
+  stroke-dasharray: 3 14;
+}
+
+/* ── Footer Links ─────────────────────────────────────────── */
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-7);
+  margin-bottom: var(--sp-5);
+  opacity: 0;
+  will-change: opacity;
+}
+
+.footer-col-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-bottom: var(--sp-2);
+}
+
+.footer-col a {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-tertiary);
+  margin-bottom: var(--sp-1);
+  transition: color 0.2s;
+  cursor: auto;
+}
+
+.footer-col a:hover {
+  color: var(--text-secondary);
+}
+
+/* ── Footer Bottom ────────────────────────────────────────── */
+
+.footer-bottom {
+  opacity: 0;
+  will-change: opacity;
+  margin-top: var(--sp-5);
+}
+
+.footer-copyright {
+  font-size: var(--type-nano);
+  font-weight: 400;
+  color: var(--text-whisper);
+  letter-spacing: 0.02em;
+  margin-bottom: var(--sp-6);
+}
+
+/* ── The Final Line ───────────────────────────────────────── */
+/* "Clem had a good day." — for the ones who scroll all the way */
+
+#final-line {
+  font-family: var(--font);
+  font-size: var(--type-nano);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.01em;
+  text-align: center;
+  padding-bottom: var(--sp-5);
+  opacity: 0;
+  will-change: opacity;
+}
+
+/* ── Mobile ───────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .footer-links {
+    flex-direction: column;
+    gap: var(--sp-5);
+    align-items: center;
+  }
+
+  #ch9-footer {
+    padding: var(--sp-6) var(--sp-3) var(--sp-4);
+  }
+}

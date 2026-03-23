@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <!-- Cloud 1 — left, main -->
+  <g class="cloud-a" transform="translate(80, 180)">
+    <ellipse cx="80"  cy="30" rx="80"  ry="30" fill="#FFFFFF"/>
+    <ellipse cx="130" cy="20" rx="60"  ry="28" fill="#FFFFFF"/>
+    <ellipse cx="50"  cy="22" rx="50"  ry="24" fill="#FFFFFF"/>
+    <ellipse cx="100" cy="35" rx="100" ry="20" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Cloud 2 — right, large -->
+  <g class="cloud-b" transform="translate(1100, 140)">
+    <ellipse cx="90"  cy="32" rx="90"  ry="32" fill="#FFFFFF"/>
+    <ellipse cx="145" cy="22" rx="65"  ry="28" fill="#FFFFFF"/>
+    <ellipse cx="55"  cy="24" rx="55"  ry="24" fill="#FFFFFF"/>
+    <ellipse cx="110" cy="38" rx="110" ry="22" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Cloud 3 — center-right, smaller -->
+  <g class="cloud-c" transform="translate(700, 200)">
+    <ellipse cx="55"  cy="22" rx="55"  ry="22" fill="#FFFFFF"/>
+    <ellipse cx="90"  cy="15" rx="40"  ry="20" fill="#FFFFFF"/>
+    <ellipse cx="35"  cy="16" rx="35"  ry="18" fill="#FFFFFF"/>
+    <ellipse cx="65"  cy="26" rx="70"  ry="15" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Cloud 4 — far right, faint -->
+  <g class="cloud-d" transform="translate(1260, 220)">
+    <ellipse cx="45"  cy="18" rx="45"  ry="18" fill="#FFFFFF"/>
+    <ellipse cx="72"  cy="12" rx="35"  ry="16" fill="#FFFFFF"/>
+    <ellipse cx="28"  cy="14" rx="30"  ry="15" fill="#FFFFFF"/>
+    <ellipse cx="55"  cy="22" rx="55"  ry="13" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Cloud 5 — far left, faint -->
+  <g class="cloud-e" transform="translate(-30, 250)">
+    <ellipse cx="60"  cy="22" rx="60"  ry="22" fill="#FFFFFF"/>
+    <ellipse cx="95"  cy="15" rx="42"  ry="20" fill="#FFFFFF"/>
+    <ellipse cx="38"  cy="16" rx="38"  ry="18" fill="#FFFFFF"/>
+    <ellipse cx="72"  cy="27" rx="75"  ry="15" fill="#FFFFFF"/>
+  </g>
+</svg>

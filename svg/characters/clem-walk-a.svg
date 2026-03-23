@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-35 -70 70 130" width="70" height="130">
+  <!-- CLEM — Walk Frame A (left leg forward) — 8 elements -->
+  <g class="clem-body-group" id="clem-walk-a">
+    <!-- 1. Head -->
+    <ellipse class="clem-head clem-all" cx="0" cy="-42" rx="18" ry="20" fill="#F4834A"/>
+
+    <!-- 2. Neck -->
+    <line class="clem-neck clem-all" x1="0" y1="-22" x2="0" y2="-14"
+          stroke="#1A1A1A" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- 3. Body -->
+    <line class="clem-body clem-all" x1="0" y1="-14" x2="0" y2="28"
+          stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- 4. Arm A (left) — swings back when left leg forward -->
+    <line class="clem-arm-a clem-all" x1="0" y1="-6" x2="-20" y2="8"
+          stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- 5. Arm B (right) — swings forward -->
+    <line class="clem-arm-b clem-all" x1="0" y1="-6" x2="20" y2="4"
+          stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- 6. Leg A (left) — forward stride -->
+    <line class="clem-leg-a clem-all" x1="0" y1="28" x2="-20" y2="62"
+          stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- 7. Leg B (right) — back stride -->
+    <line class="clem-leg-b clem-all" x1="0" y1="28" x2="20" y2="62"
+          stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

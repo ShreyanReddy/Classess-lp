@@ -1,0 +1,255 @@
+/* ============================================================
+   CLASSESS AI — GLOBAL STYLES
+   Body, cursor, loader, base chapter layout
+   ============================================================ */
+
+/* ── Base ─────────────────────────────────────────────────── */
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font);
+  font-weight: 400;
+  color: var(--text-primary);
+  background: var(--sky-dawn);
+  cursor: none;
+  overflow: hidden; /* Unlocked by ch0.js after fog lift */
+}
+
+/* ── Scroll Container ─────────────────────────────────────── */
+
+#scroll-container {
+  position: relative;
+}
+
+/* ── Chapter Sections ─────────────────────────────────────── */
+
+.chapter {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Sticky chapters — viewport is locked, world animates inside */
+.chapter-sticky {
+  position: relative;
+}
+
+.chapter-sticky .sticky-inner {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  contain: layout;
+}
+
+/* ── Parallax World Container ─────────────────────────────── */
+
+.p-world {
+  position: absolute;
+  top: -80px;
+  left: -100px;
+  right: -100px;
+  bottom: -80px;
+  overflow: hidden;
+}
+
+/* ── Parallax Layers ──────────────────────────────────────── */
+
+.p-layer {
+  position: absolute;
+  top: 80px;
+  left: 100px;
+  right: 100px;
+  bottom: 80px;
+  will-change: transform;
+}
+
+/* ── Custom Cursor ────────────────────────────────────────── */
+
+#cur {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  transition: background 0.2s;
+  will-change: transform;
+}
+
+#cur-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(255,255,255,0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s, background 0.15s;
+  will-change: transform;
+}
+
+#cur-ring.hover-link {
+  width: 64px;
+  height: 64px;
+  border-color: rgba(255,255,255,0.9);
+}
+
+#cur-ring.hover-card {
+  width: 54px;
+  height: 54px;
+  border-color: rgba(244,131,74,0.7);
+  background: rgba(244,131,74,0.06);
+}
+
+#cur-ring.hover-clem {
+  width: 72px;
+  height: 72px;
+  border-color: rgba(244,131,74,0.9);
+  background: rgba(244,131,74,0.08);
+}
+
+/* ── Loader Line ──────────────────────────────────────────── */
+
+#loader-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--classess-orange);
+  z-index: calc(var(--z-ch0) + 1);
+  transition: width 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#loader-line.loaded {
+  width: 100%;
+}
+
+/* ── Scroll Hint ──────────────────────────────────────────── */
+
+#scroll-hint {
+  position: fixed;
+  bottom: var(--sp-5);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-1);
+  z-index: var(--z-nav);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+#scroll-hint.visible { opacity: 1; }
+#scroll-hint.hidden  { opacity: 0; }
+
+#scroll-hint span {
+  font-size: var(--type-caption);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+#scroll-hint-line {
+  width: 1px;
+  height: 48px;
+  background: var(--text-secondary);
+  animation: scrollLinePulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollLinePulse {
+  0%, 100% { transform: scaleY(1);   opacity: 0.6; }
+  50%       { transform: scaleY(0.4); opacity: 0.2; }
+}
+
+/* ── Canvas (Particles) ───────────────────────────────────── */
+
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: calc(var(--z-ui) - 1);
+}
+
+/* ── Frosted Copy ─────────────────────────────────────────── */
+
+.frosted-copy {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: var(--sp-1) var(--sp-2);
+  border-radius: var(--radius-sm);
+  background: rgba(0,0,0,0.12);
+}
+
+.frosted-headline {
+  font-size: var(--type-display);
+  font-weight: 800;
+  color: var(--text-primary);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+.fc-timestamp {
+  font-size: var(--type-caption);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.scene-copy {
+  font-size: var(--type-body);
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.scene-headline {
+  font-size: var(--type-title);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* ── Reduced Motion ───────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .p-layer {
+    will-change: auto;
+    transform: none !important;
+  }
+
+  #particle-canvas { display: none; }
+  #cur, #cur-ring   { display: none; }
+  #scroll-hint      { display: none; }
+}
+
+/* ── Mobile: hide cursor ──────────────────────────────────── */
+
+@media (pointer: coarse) {
+  #cur, #cur-ring { display: none; }
+  body { cursor: auto; }
+  button, a { cursor: pointer; }
+}

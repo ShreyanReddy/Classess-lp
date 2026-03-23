@@ -1,0 +1,132 @@
+/* ============================================================
+   CLASSESS AI — CHAPTER 3: MORNING WALK
+   300vh side-scroll, Clem centered, world moves left
+   ============================================================ */
+
+#ch3 {
+  height: 300vh;
+}
+
+#ch3 .sticky-inner {
+  background: var(--sky-morning);
+  overflow: hidden;
+}
+
+/* ── Walk World Container ─────────────────────────────────── */
+
+#ch3-world {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* ── Horizontal Scroll Layers ─────────────────────────────── */
+/* World moves left as Clem "walks". Each layer at different speed. */
+
+.walk-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  will-change: transform;
+}
+
+/* Layer widths are 3× viewport to allow enough travel */
+.walk-layer--sky    { width: 300vw; z-index: var(--z-sky);    }
+.walk-layer--mtn    { width: 300vw; z-index: var(--z-mtn-far);}
+.walk-layer--hills  { width: 300vw; z-index: var(--z-hills);  }
+.walk-layer--ground { width: 300vw; z-index: var(--z-ground); }
+.walk-layer--trees  { width: 300vw; z-index: var(--z-trees);  }
+.walk-layer--fg     { width: 300vw; z-index: var(--z-fg);     }
+
+/* ── Clem Walk Container ──────────────────────────────────── */
+
+#clem-walk {
+  position: absolute;
+  bottom: 28%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-char);
+  will-change: transform;
+}
+
+/* ── Waveforms ────────────────────────────────────────────── */
+
+#ch3-waveforms {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  z-index: var(--z-ui);
+  opacity: 0;
+  will-change: opacity;
+  pointer-events: none;
+}
+
+/* ── AI Companions ────────────────────────────────────────── */
+
+#ai-companion-left,
+#ai-companion-right {
+  position: absolute;
+  z-index: var(--z-ui);
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* ── Scene Copy ───────────────────────────────────────────── */
+
+.ch3-timestamp {
+  position: absolute;
+  top: var(--sp-7);
+  left: var(--sp-6);
+  z-index: var(--z-ui);
+  opacity: 0;
+}
+
+.ch3-headline {
+  position: absolute;
+  top: 50%;
+  left: var(--sp-6);
+  transform: translateY(-50%);
+  max-width: 420px;
+  z-index: var(--z-ui);
+  opacity: 0;
+}
+
+.ch3-center-copy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: var(--z-ui);
+  opacity: 0;
+  width: 80%;
+  max-width: 680px;
+}
+
+/* ── School Building (appears at end of ch3) ─────────────── */
+
+#school-building {
+  position: absolute;
+  right: -20%;
+  bottom: 20%;
+  z-index: var(--z-ground);
+  will-change: transform, opacity;
+  opacity: 0;
+}
+
+@media (max-width: 767px) {
+  #clem-walk {
+    transform: translateX(-50%) scale(0.75);
+    bottom: 22%;
+  }
+  .ch3-headline {
+    left: var(--sp-3);
+    max-width: calc(100vw - var(--sp-6));
+  }
+}

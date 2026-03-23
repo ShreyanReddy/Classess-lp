@@ -1,0 +1,156 @@
+/* ============================================================
+   CLASSESS AI — CHAPTER 6: HOMEWORK & AI TUTOR
+   300vh, evening bedroom, lamp glow, ring → 100%
+   ============================================================ */
+
+#ch6 {
+  height: 300vh;
+}
+
+#ch6 .sticky-inner {
+  background: var(--sky-dusk);
+}
+
+/* ── Room (mirrors Ch2 structure) ──────────────────────────── */
+
+#ch6-room {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  will-change: opacity;
+}
+
+/* ── Lamp Glow ───────────────────────────────────────────────── */
+
+.lamp-glow {
+  will-change: opacity;
+  animation: lampBreathe 3s ease-in-out infinite;
+}
+
+@keyframes lampBreathe {
+  0%,100% { opacity: 0.6; }
+  50%      { opacity: 0.8; }
+}
+
+/* ── Device Screen States ────────────────────────────────────── */
+
+.device-screen {
+  will-change: opacity;
+}
+
+.device-screen--thinking {
+  animation: screenThink 1.8s ease-in-out infinite;
+}
+
+@keyframes screenThink {
+  0%,100% { opacity: 0.3; }
+  50%      { opacity: 0.5; }
+}
+
+.device-screen--delivering { opacity: 0.8; }
+
+.device-screen--correct {
+  animation: screenCorrect 0.4s ease-out forwards;
+}
+
+@keyframes screenCorrect {
+  0%   { opacity: 0.8; filter: none; }
+  30%  { opacity: 1;   filter: drop-shadow(0 0 12px #F4834A); }
+  100% { opacity: 0.7; filter: none; }
+}
+
+.device-screen--idle {
+  animation: screenIdle 3s ease-in-out infinite;
+}
+
+@keyframes screenIdle {
+  0%,100% { opacity: 0.5; }
+  50%      { opacity: 0.7; }
+}
+
+/* ── AI Response Float Lines ──────────────────────────────────── */
+
+.ai-response-line {
+  position: absolute;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-primary);
+  max-width: 280px;
+  pointer-events: none;
+  z-index: var(--z-ui);
+  will-change: transform, opacity;
+}
+
+/* ── Clem Speech Bubble ───────────────────────────────────────── */
+
+.clem-speech-bubble {
+  position: absolute;
+  background: rgba(244,131,74,0.18);
+  border: 1px solid rgba(244,131,74,0.35);
+  border-radius: var(--radius-md);
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  pointer-events: none;
+  will-change: transform, opacity;
+  opacity: 0;
+}
+
+/* Completion ring glow override for ch6 */
+#ch6 .ring-active.complete {
+  animation: ringCompletePulse 2s ease-in-out infinite;
+}
+
+@keyframes ringCompletePulse {
+  0%,100% { filter: drop-shadow(0 0 6px #F4834A);  }
+  50%      { filter: drop-shadow(0 0 14px #F4834A); }
+}
+
+/* ── Scene Copy ───────────────────────────────────────────────── */
+
+.ch6-timestamp {
+  position: absolute;
+  bottom: var(--sp-7);
+  left: var(--sp-6);
+  z-index: var(--z-ui);
+  opacity: 0;
+}
+
+.ch6-headline {
+  position: absolute;
+  top: 50%;
+  right: var(--sp-6);
+  transform: translateY(-50%);
+  max-width: 340px;
+  text-align: right;
+  z-index: var(--z-ui);
+  opacity: 0;
+}
+
+.ch6-completion-copy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: var(--z-ui);
+  opacity: 0;
+  font-size: var(--type-title);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .ch6-headline {
+    right: var(--sp-3);
+    max-width: calc(100vw - var(--sp-6));
+    text-align: left;
+    right: auto;
+    left: var(--sp-3);
+  }
+}

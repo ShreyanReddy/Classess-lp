@@ -1,0 +1,122 @@
+/* ============================================================
+   CLASSESS AI — GLASS NAV
+   4 states: hidden / visible / scrolled / ch8-active
+   ============================================================ */
+
+.gnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--sp-5);
+  z-index: var(--z-nav);
+
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  border-bottom: 1px solid rgba(255,255,255,0.16);
+
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: background 0.4s ease, border-color 0.4s ease, opacity 0.4s ease;
+  will-change: transform, opacity;
+}
+
+.gnav.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gnav.scrolled {
+  background: rgba(10,8,24,0.50);
+}
+
+.gnav.ch8-active {
+  background: transparent;
+  border-bottom-color: transparent;
+}
+
+/* ── Logo ─────────────────────────────────────────────────── */
+
+.gnav-logo {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.gnav-logo-word {
+  font-family: var(--font);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.gnav-logo-ai {
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ── Nav Links ────────────────────────────────────────────── */
+
+.gnav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+}
+
+.gnav-links a {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+  letter-spacing: -0.01em;
+}
+
+.gnav-links a:hover {
+  color: var(--text-primary);
+}
+
+/* ── CTA Button ───────────────────────────────────────────── */
+
+.gnav-cta {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-primary);
+  background: var(--classess-orange);
+  border-radius: var(--radius-pill);
+  padding: 10px 24px;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.gnav-cta:hover {
+  background: var(--classess-orange-deep);
+  transform: translateY(-1px);
+}
+
+/* ── Mobile Nav ───────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .gnav {
+    height: 56px;
+    padding: 0 var(--sp-3);
+  }
+
+  .gnav-links {
+    display: none;
+  }
+
+  .gnav-logo-word {
+    font-size: 20px;
+  }
+}

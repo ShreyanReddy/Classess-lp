@@ -1,0 +1,113 @@
+/* ============================================================
+   CLASSESS AI — CHAPTER 4: OUTDOOR CLASSROOM
+   400vh sticky, front-facing camera, comprehension rings
+   ============================================================ */
+
+#ch4 {
+  height: 400vh;
+}
+
+#ch4 .sticky-inner {
+  background: var(--sky-noon);
+}
+
+/* ── Classroom SVG ────────────────────────────────────────── */
+
+#ch4-scene {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  will-change: opacity;
+}
+
+/* ── Dappled Light Patches ────────────────────────────────── */
+
+.dapple {
+  fill: #FFE0A0;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: dappleDrift 60s ease-in-out infinite;
+}
+
+@keyframes dappleDrift {
+  0%,100% { transform: translateX(0);    }
+  50%      { transform: translateX(20px); }
+}
+
+/* ── Comprehension Rings ──────────────────────────────────── */
+
+.comp-ring-wrap {
+  z-index: var(--z-ui);
+  opacity: 0;
+  will-change: opacity;
+}
+
+/* ── Teacher Animation ────────────────────────────────────── */
+
+.teacher-arm-pointing {
+  transform-origin: 0 0;
+  transform-box: fill-box;
+  animation: teacherPoint 2s ease-in-out infinite;
+}
+
+@keyframes teacherPoint {
+  0%,100% { transform: rotate(0deg);  }
+  50%      { transform: rotate(5deg);  }
+}
+
+/* Teacher "data dashboard" glow behind head */
+.teacher-glow {
+  fill: #2A7A6A;
+  opacity: 0.25;
+  will-change: opacity;
+  animation: teacherGlow 3s ease-in-out infinite;
+}
+
+@keyframes teacherGlow {
+  0%,100% { opacity: 0.20; }
+  50%      { opacity: 0.35; }
+}
+
+/* ── Scene Copy ───────────────────────────────────────────── */
+
+.ch4-timestamp {
+  position: absolute;
+  top: var(--sp-7);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-ui);
+  opacity: 0;
+}
+
+.ch4-headline {
+  position: absolute;
+  top: var(--sp-7);
+  left: var(--sp-6);
+  z-index: var(--z-ui);
+  opacity: 0;
+  max-width: 340px;
+}
+
+.ch4-center-copy {
+  position: absolute;
+  bottom: var(--sp-7);
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: var(--z-ui);
+  opacity: 0;
+  width: 80%;
+  max-width: 680px;
+}
+
+/* Feature cards — left side for ch4 */
+#ch4 .feature-card {
+  left: var(--sp-6);
+}
+
+@media (max-width: 767px) {
+  .ch4-headline {
+    left: var(--sp-3);
+    max-width: calc(100vw - var(--sp-6));
+  }
+}

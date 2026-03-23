@@ -1,0 +1,117 @@
+/* ============================================================
+   CLASSESS AI — CHAPTER 2: CLEM'S ROOM (MORNING)
+   250vh sticky, camera zooms into farmhouse window
+   ============================================================ */
+
+#ch2 {
+  height: 250vh;
+}
+
+#ch2 .sticky-inner {
+  background: var(--sky-morning);
+}
+
+/* ── Transition Overlay (zoom into window) ─────────────────── */
+
+#ch2-zoom-overlay {
+  position: absolute;
+  inset: 0;
+  background: #FFFFFF;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5;
+  will-change: opacity;
+}
+
+/* ── Room Container ─────────────────────────────────────────── */
+
+#ch2-room {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  will-change: opacity;
+}
+
+/* ── Room Window (live Ch1 world behind) ─────────────────────── */
+
+#ch2-window-world {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 4px;
+  will-change: transform;
+}
+
+/* ── Clem Seated ──────────────────────────────────────────────── */
+
+#clem-ch2 {
+  position: absolute;
+  will-change: transform;
+}
+
+/* Head tilt idle animation */
+.clem-head-idle {
+  transform-origin: center bottom;
+  transform-box: fill-box;
+  animation: clemHeadTilt 6s ease-in-out infinite;
+}
+
+@keyframes clemHeadTilt {
+  0%,100%  { transform: rotate(0deg);  }
+  30%, 40% { transform: rotate(-6deg); }
+  70%, 80% { transform: rotate(4deg);  }
+}
+
+/* Thumb scroll */
+.clem-thumb {
+  transform-origin: 50% 100%;
+  transform-box: fill-box;
+  animation: clemThumbScroll 1.8s ease-in-out infinite;
+}
+
+@keyframes clemThumbScroll {
+  0%,100% { transform: translateY(0px); }
+  50%      { transform: translateY(3px); }
+}
+
+/* ── Phone Screen Glow ────────────────────────────────────────── */
+
+.phone-glow {
+  will-change: opacity;
+  animation: phoneGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes phoneGlow {
+  0%,100% { opacity: 0.35; }
+  50%      { opacity: 0.55; }
+}
+
+/* ── Scene Copy ──────────────────────────────────────────────── */
+
+.ch2-timestamp {
+  position: absolute;
+  bottom: var(--sp-7);
+  left: var(--sp-6);
+  z-index: var(--z-ui);
+}
+
+.ch2-headline {
+  position: absolute;
+  top: 50%;
+  left: var(--sp-6);
+  transform: translateY(-50%);
+  max-width: 380px;
+  z-index: var(--z-ui);
+}
+
+/* Feature cards positioned right side */
+.ch2 .feature-card {
+  right: var(--sp-6);
+}
+
+@media (max-width: 767px) {
+  .ch2-headline {
+    left: var(--sp-3);
+    max-width: calc(100vw - var(--sp-6));
+    font-size: var(--type-title);
+  }
+}

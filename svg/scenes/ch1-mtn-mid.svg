@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <!-- Mid mountains — forest green. Single flat fill. -->
+  <path d="
+    M-20,900
+    L-20,600
+    Q60,500 160,550
+    Q240,590 300,510
+    Q380,420 450,490
+    Q510,545 580,460
+    Q660,360 740,440
+    Q800,500 860,420
+    Q930,330 1010,410
+    Q1070,470 1140,390
+    Q1210,310 1290,390
+    Q1370,460 1460,420
+    L1460,900 Z
+  " fill="#1E4A2E"/>
+</svg>

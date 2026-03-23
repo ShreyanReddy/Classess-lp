@@ -1,0 +1,184 @@
+/* ============================================================
+   CLASSESS AI — CHAPTER 8: THE CLIFF (CTA)
+   280vh, emotional peak, Clem silhouette on cliff,
+   3.0s title fade, heartbeat CTA
+   ============================================================ */
+
+#ch8 {
+  height: 280vh;
+}
+
+#ch8 .sticky-inner {
+  background: #1A0A2E;
+}
+
+/* ── Scene Phases (crossfade approach) ───────────────────── */
+
+#ch8-phase-walk {
+  position: absolute;
+  inset: 0;
+  will-change: opacity;
+}
+
+#ch8-phase-cliff {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  will-change: opacity;
+}
+
+/* ── Sunset Sky (Chapter 8) ───────────────────────────────── */
+
+#ch8-sky {
+  position: absolute;
+  inset: 0;
+}
+
+/* ── Ocean ────────────────────────────────────────────────── */
+
+.ocean-surface {
+  fill: #0A1628;
+}
+
+.ocean-shimmer {
+  fill: #C89030;
+  opacity: 0.4;
+  will-change: transform;
+  animation: oceanShimmer 3s ease-in-out infinite;
+  transform-origin: top center;
+  transform-box: fill-box;
+}
+
+@keyframes oceanShimmer {
+  0%,100% { transform: scaleX(1);    }
+  50%      { transform: scaleX(1.05); }
+}
+
+/* ── Cliff Shape ──────────────────────────────────────────── */
+
+.cliff-shape {
+  fill: #0A0608;
+}
+
+/* ── Clem Silhouette (position:fixed, stays on cliff) ────── */
+
+#clem-cliff {
+  position: fixed;
+  bottom: 12vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: calc(var(--z-ch0) - 2);
+  will-change: opacity;
+  pointer-events: none;
+}
+
+/* All elements transition to silhouette color */
+#clem-cliff .clem-all {
+  transition: fill 0.6s ease, stroke 0.6s ease;
+}
+
+#clem-cliff.silhouette .clem-all {
+  fill: #0D0B1E;
+  stroke: #0D0B1E;
+}
+
+/* ── Title Card ───────────────────────────────────────────── */
+
+#ch8-title {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: var(--z-ui);
+  opacity: 0;
+  will-change: opacity;
+  pointer-events: none;
+}
+
+.ch8-title-word {
+  font-family: var(--font);
+  font-size: clamp(64px, 14vw, 180px);
+  font-weight: 900;
+  color: #FFFFFF;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  display: block;
+}
+
+.ch8-title-ai {
+  font-size: clamp(40px, 8.5vw, 112px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  display: inline;
+}
+
+/* ── CTA Section ──────────────────────────────────────────── */
+
+#ch8-cta {
+  position: absolute;
+  bottom: 28%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: var(--z-ui);
+  opacity: 0;
+  will-change: opacity, transform;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+#ch8-cta.active {
+  pointer-events: auto;
+}
+
+.ch8-tagline {
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.72);
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+.ch8-cta-btn {
+  display: inline-block;
+  font-family: var(--font);
+  font-size: 18px;
+  font-weight: 800;
+  color: #FFFFFF;
+  background: var(--classess-orange);
+  border-radius: 60px;
+  padding: 18px 52px;
+  border: 2px solid rgba(255,255,255,0.22);
+  cursor: none;
+  transition: background 0.2s, transform 0.15s;
+  animation: heartbeat 3s ease-in-out infinite;
+  will-change: box-shadow;
+}
+
+.ch8-cta-btn:hover {
+  background: var(--classess-orange-deep);
+  transform: translateY(-2px) scale(1.02);
+}
+
+@keyframes heartbeat {
+  0%,100% { box-shadow: 0 0 40px rgba(244,131,74,0.35); }
+  50%      { box-shadow: 0 0 80px rgba(244,131,74,0.65); }
+}
+
+/* ── Mobile ───────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .ch8-title-word {
+    font-size: clamp(40px, 12vw, 180px);
+  }
+
+  .ch8-cta-btn {
+    width: calc(100vw - var(--sp-6));
+    text-align: center;
+    padding: 18px var(--sp-4);
+  }
+}

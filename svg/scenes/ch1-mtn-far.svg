@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <!-- Far mountains — darkest, most purple. Single flat fill. -->
+  <path d="
+    M-20,900
+    L-20,540
+    Q80,360 200,440
+    Q280,490 350,380
+    Q420,270 500,350
+    Q560,410 620,320
+    Q700,200 780,300
+    Q840,380 900,290
+    Q970,180 1050,270
+    Q1110,340 1170,250
+    Q1240,150 1320,240
+    Q1390,310 1460,270
+    L1460,900 Z
+  " fill="#2E1838"/>
+</svg>

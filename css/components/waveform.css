@@ -1,0 +1,68 @@
+/* ============================================================
+   CLASSESS AI — AUDIO WAVEFORM
+   Left (orange) + right (gold) sinusoidal SVG paths
+   ============================================================ */
+
+.waveform-wrap {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+  z-index: var(--z-ui);
+}
+
+.waveform {
+  overflow: visible;
+}
+
+.waveform-left .wf-path {
+  fill: none;
+  stroke: var(--wave-left);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.waveform-right .wf-path {
+  fill: none;
+  stroke: var(--wave-right);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* AI Companion Floaters (Chapter 3) */
+.ai-companion {
+  position: absolute;
+  width: 48px;
+  height: 52px;
+  pointer-events: none;
+  will-change: transform;
+  animation: companionFloat 3s ease-in-out infinite;
+}
+
+.ai-companion:nth-child(2) {
+  animation-delay: 0.8s;
+}
+
+@keyframes companionFloat {
+  0%,100% { transform: translateY(0px); }
+  50%      { transform: translateY(-4px); }
+}
+
+.ai-companion-glow {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  opacity: 0.25;
+  filter: blur(8px);
+  will-change: opacity;
+  animation: companionPulse 3s ease-in-out infinite;
+}
+
+@keyframes companionPulse {
+  0%,100% { opacity: 0.2; transform: scale(1);    }
+  50%      { opacity: 0.4; transform: scale(1.1);  }
+}

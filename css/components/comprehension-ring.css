@@ -1,0 +1,53 @@
+/* ============================================================
+   CLASSESS AI — COMPREHENSION RING
+   SVG stroke-dasharray ring above student heads
+   ============================================================ */
+
+.comp-ring-wrap {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.comp-ring {
+  overflow: visible;
+  display: block;
+}
+
+/* Background ring — always at low opacity */
+.ring-bg {
+  fill: none;
+  stroke: rgba(255,255,255,0.15);
+  stroke-width: 4;
+}
+
+/* Active ring — animated fill level */
+.ring-active {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 150.8; /* 2π × 24 */
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transform-box: fill-box;
+  transition: stroke-dashoffset 2s ease-in-out, stroke 1s ease;
+}
+
+/* Per-character ring colors */
+.ring-clem      { stroke: #F4834A; }
+.ring-teacher   { stroke: #2A7A6A; }
+.ring-student-b { stroke: #9B7FD4; }
+.ring-student-c { stroke: #FFD166; }
+.ring-student-d { stroke: #E07A8A; }
+.ring-student-e { stroke: #5ABFAF; }
+
+/* Completion glow — applied when ring hits 100% */
+.ring-active.complete {
+  filter: drop-shadow(0 0 6px currentColor);
+  animation: ringGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes ringGlow {
+  0%,100% { filter: drop-shadow(0 0 4px currentColor);  opacity: 1;   }
+  50%      { filter: drop-shadow(0 0 10px currentColor); opacity: 0.9; }
+}

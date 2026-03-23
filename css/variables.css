@@ -1,0 +1,149 @@
+/* ============================================================
+   CLASSESS AI — DESIGN SYSTEM VARIABLES
+   Single source of truth for all design tokens
+   ============================================================ */
+
+:root {
+
+  /* ── Brand ────────────────────────────────────────────── */
+  --classess-orange:      #F4834A;
+  --classess-orange-deep: #E06030;
+  --classess-white:       #FFFFFF;
+
+  /* ── Sky Arc System ───────────────────────────────────── */
+  --arc-1: #B83E18;
+  --arc-2: #D45A28;
+  --arc-3: #F07838;
+  --arc-4: #F4924A;
+  --arc-5: #FFB84A;
+  --arc-6: #FFD166;
+
+  /* ── Sky Base Colors ──────────────────────────────────── */
+  --sky-dawn:    #1A0F3C;
+  --sky-morning: #1A3A6A;
+  --sky-noon:    #2A5A9A;
+  --sky-golden:  #8A3A08;
+  --sky-dusk:    #2A1845;
+  --sky-night:   #0D0B1E;
+
+  /* ── Sun ──────────────────────────────────────────────── */
+  --sun-core:  #FFFCE0;
+  --sun-disc:  #FFF5A0;
+  --sun-halo:  #FFE580;
+  --sun-ray:   #FFE566;
+
+  /* ── Mountains ────────────────────────────────────────── */
+  --mtn-far:  #2E1838;
+  --mtn-mid:  #1E4A2E;
+  --mtn-near: #2E6E3E;
+
+  /* ── Ground ───────────────────────────────────────────── */
+  --grass-mid:  #48924E;
+  --grass-near: #3E8844;
+  --grass-fg:   #2E7834;
+
+  /* ── Path ─────────────────────────────────────────────── */
+  --path-main: #C8986A;
+  --path-edge: #B88858;
+
+  /* ── Trees ────────────────────────────────────────────── */
+  --tree-dk: #1A5E2A;
+  --tree-md: #247034;
+  --tree-lt: #2E7A3E;
+  --trunk:   #5A3018;
+
+  /* ── Farmhouse ────────────────────────────────────────── */
+  --house-wall: #D8AA7A;
+  --house-roof: #784018;
+  --house-door: #6A3818;
+  --house-win:  #FFE566;
+
+  /* ── Animals & Fence ──────────────────────────────────── */
+  --cattle:   #4A2E10;
+  --cattle-b: #5A3A1A;
+  --cattle-c: #3A1E08;
+  --fence:    #8A5A28;
+
+  /* ── Night Colors ─────────────────────────────────────── */
+  --night-sky:      #0D0B1E;
+  --night-deep:     #070614;
+  --indigo-mid:     #1A1640;
+  --indigo-light:   #2A2855;
+  --star-white:     #FFFFFF;
+  --star-warm:      #FFF8E0;
+  --firefly:        #D4F080;
+  --moonlight-path: #C8D8F8;
+
+  /* ── UI / Glass ───────────────────────────────────────── */
+  --glass-bg:     rgba(255,255,255,0.11);
+  --glass-border: rgba(255,255,255,0.20);
+  --glass-blur:   24px;
+
+  /* ── Text ─────────────────────────────────────────────── */
+  --text-primary:   rgba(255,255,255,1.0);
+  --text-secondary: rgba(255,255,255,0.75);
+  --text-tertiary:  rgba(255,255,255,0.50);
+  --text-whisper:   rgba(255,255,255,0.35);
+
+  /* ── Comprehension Rings ──────────────────────────────── */
+  --ring-full: #F4834A;
+  --ring-mid:  #FFD166;
+  --ring-low:  #8AB8E8;
+  --ring-bg:   rgba(255,255,255,0.15);
+
+  /* ── Waveforms ────────────────────────────────────────── */
+  --wave-left:  #F4834A;
+  --wave-right: #FFD166;
+
+  /* ── Characters ───────────────────────────────────────── */
+  --clem:      #F4834A;
+  --teacher:   #2A7A6A;
+  --student-b: #9B7FD4;
+  --student-c: #FFD166;
+  --student-d: #E07A8A;
+  --student-e: #5ABFAF;
+  --char-body: #1A1A1A;
+
+  /* ── Typography ───────────────────────────────────────── */
+  --font: 'Nunito', sans-serif;
+
+  --type-hero:    clamp(56px, 10vw, 128px);
+  --type-display: clamp(36px, 6vw,  80px);
+  --type-title:   clamp(24px, 4vw,  52px);
+  --type-body:    clamp(15px, 1.5vw, 20px);
+  --type-caption: clamp(11px, 1vw,  14px);
+  --type-nano:    11px;
+
+  /* ── Spacing (8px base unit) ──────────────────────────── */
+  --sp-1: 8px;
+  --sp-2: 16px;
+  --sp-3: 24px;
+  --sp-4: 32px;
+  --sp-5: 48px;
+  --sp-6: 64px;
+  --sp-7: 96px;
+  --sp-8: 128px;
+
+  /* ── Border Radius ────────────────────────────────────── */
+  --radius-sm:   10px;
+  --radius-md:   16px;
+  --radius-lg:   20px;
+  --radius-xl:   32px;
+  --radius-pill: 50px;
+
+  /* ── Z-Index System ───────────────────────────────────── */
+  --z-sky:       10;
+  --z-clouds:    20;
+  --z-mtn-far:   30;
+  --z-mtn-mid:   40;
+  --z-hills:     50;
+  --z-ground:    60;
+  --z-trees:     70;
+  --z-fg:        80;
+  --z-char:      90;
+  --z-ui:       100;
+  --z-nav:      200;
+  --z-cursor:   999;
+  --z-ch0:     1000;
+
+}

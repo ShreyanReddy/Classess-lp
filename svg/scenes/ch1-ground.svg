@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <!-- Ground base -->
+  <rect x="0" y="740" width="1440" height="160" fill="#48924E"/>
+
+  <!-- ── Farmhouse ─────────────────────────────────── -->
+  <g transform="translate(580, 560)">
+    <!-- House wall -->
+    <rect x="0" y="80" width="140" height="100" fill="#D8AA7A"/>
+    <!-- Roof -->
+    <polygon points="0,80 70,10 140,80" fill="#784018"/>
+    <!-- Door -->
+    <rect x="52" y="130" width="36" height="50" fill="#6A3818"/>
+    <!-- Window left — warm glow -->
+    <rect x="14" y="100" width="30" height="24" rx="2" fill="#FFE566"/>
+    <!-- Window right — warm glow -->
+    <rect x="96" y="100" width="30" height="24" rx="2" fill="#FFE566"/>
+    <!-- Chimney -->
+    <rect x="88" y="0" width="16" height="48" fill="#784018"/>
+  </g>
+
+  <!-- ── Fence ───────────────────────────────────── -->
+  <!-- Horizontal rails -->
+  <line x1="480" y1="720" x2="760" y2="720" stroke="#8A5A28" stroke-width="3"/>
+  <line x1="480" y1="740" x2="760" y2="740" stroke="#8A5A28" stroke-width="3"/>
+  <!-- Fence posts -->
+  <rect x="480" y="710" width="7" height="40" rx="2" fill="#8A5A28"/>
+  <rect x="516" y="710" width="7" height="40" rx="2" fill="#8A5A28"/>
+  <rect x="552" y="710" width="7" height="40" rx="2" fill="#8A5A28"/>
+  <rect x="588" y="710" width="7" height="40" rx="2" fill="#8A5A28"/>
+  <rect x="624" y="710" width="7" height="40" rx="2" fill="#8A5A28"/>
+  <rect x="660" y="710" width="7" height="40" rx="2" fill="#8A5A28"/>
+  <rect x="696" y="710" width="7" height="40" rx="2" fill="#8A5A28"/>
+  <rect x="732" y="710" width="7" height="40" rx="2" fill="#8A5A28"/>
+  <rect x="756" y="710" width="7" height="40" rx="2" fill="#8A5A28"/>
+
+  <!-- ── Cattle ──────────────────────────────────── -->
+  <!-- Cattle A -->
+  <g transform="translate(780, 720)">
+    <ellipse cx="30" cy="20" rx="30" ry="14" fill="#4A2E10"/>
+    <rect x="0"  cy="30" x="5"  y="28" width="8" height="14" rx="2" fill="#4A2E10"/>
+    <rect x="18" y="28" width="8" height="14" rx="2" fill="#4A2E10"/>
+    <rect x="34" y="28" width="8" height="14" rx="2" fill="#4A2E10"/>
+    <rect x="46" y="28" width="8" height="14" rx="2" fill="#4A2E10"/>
+    <ellipse cx="55" cy="18" rx="12" ry="10" fill="#4A2E10"/>
+  </g>
+
+  <!-- Cattle B — slightly different shade -->
+  <g transform="translate(870, 715)">
+    <ellipse cx="28" cy="18" rx="28" ry="13" fill="#5A3A1A"/>
+    <rect x="4"  y="26" width="7" height="13" rx="2" fill="#5A3A1A"/>
+    <rect x="16" y="26" width="7" height="13" rx="2" fill="#5A3A1A"/>
+    <rect x="30" y="26" width="7" height="13" rx="2" fill="#5A3A1A"/>
+    <rect x="42" y="26" width="7" height="13" rx="2" fill="#5A3A1A"/>
+    <ellipse cx="51" cy="16" rx="11" ry="9" fill="#5A3A1A"/>
+  </g>
+
+  <!-- Cattle C — distant, smaller -->
+  <g transform="translate(960, 724)" opacity="0.85">
+    <ellipse cx="22" cy="14" rx="22" ry="11" fill="#3A1E08"/>
+    <rect x="3"  y="22" width="6" height="10" rx="2" fill="#3A1E08"/>
+    <rect x="13" y="22" width="6" height="10" rx="2" fill="#3A1E08"/>
+    <rect x="25" y="22" width="6" height="10" rx="2" fill="#3A1E08"/>
+    <rect x="34" y="22" width="6" height="10" rx="2" fill="#3A1E08"/>
+    <ellipse cx="40" cy="12" rx="9" ry="8" fill="#3A1E08"/>
+  </g>
+
+  <!-- ── Birds (two pairs in sky above) ─────────────── -->
+  <g class="bird-pair" transform="translate(300, 420)">
+    <!-- Bird 1 -->
+    <path d="M0,0 Q6,-5 12,0 Q18,-5 24,0" fill="none" stroke="#2E1838" stroke-width="2" stroke-linecap="round"/>
+    <!-- Bird 2 -->
+    <path d="M32,4 Q38,-1 44,4 Q50,-1 56,4" fill="none" stroke="#2E1838" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <g class="bird-pair" transform="translate(1050, 380)" style="animation-delay:-4s;">
+    <path d="M0,0 Q5,-4 10,0 Q15,-4 20,0" fill="none" stroke="#2E1838" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M26,3 Q31,-1 36,3 Q41,-1 46,3" fill="none" stroke="#2E1838" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+</svg>

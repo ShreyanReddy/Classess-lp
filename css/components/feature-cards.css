@@ -1,0 +1,153 @@
+/* ============================================================
+   CLASSESS AI — FEATURE CARDS
+   Floating frosted glass cards, reused across all chapters
+   ============================================================ */
+
+.feature-card {
+  position: absolute;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 22px;
+  max-width: 240px;
+  min-width: 180px;
+
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  will-change: transform, opacity;
+  z-index: var(--z-ui);
+}
+
+.feature-card.visible {
+  animation: fcFloat 4s ease-in-out infinite;
+}
+
+@keyframes fcFloat {
+  0%,100% { transform: translateY(0px); }
+  50%      { transform: translateY(-6px); }
+}
+
+/* ── Card Icon ────────────────────────────────────────────── */
+
+.fc-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: var(--sp-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.10);
+}
+
+.fc-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ── Card Text ────────────────────────────────────────────── */
+
+.fc-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--classess-orange);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.fc-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--sp-1);
+  line-height: 1.25;
+}
+
+.fc-desc {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ── Data Cards (Chapter 5 — floating afternoon walk cards) ── */
+
+.data-card {
+  position: absolute;
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  width: 180px;
+  pointer-events: none;
+  will-change: transform, opacity;
+  z-index: var(--z-ui);
+}
+
+.data-card--strength {
+  background: rgba(244,131,74,0.18);
+  border: 1px solid rgba(244,131,74,0.35);
+  box-shadow: 0 0 20px rgba(244,131,74,0.10);
+}
+
+.data-card--gap {
+  background: rgba(138,184,232,0.15);
+  border: 1px solid rgba(138,184,232,0.30);
+  box-shadow: 0 0 20px rgba(138,184,232,0.08);
+}
+
+.data-card--quiz {
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.20);
+}
+
+.data-card--teacher {
+  background: rgba(42,122,106,0.15);
+  border: 1px solid rgba(42,122,106,0.30);
+}
+
+.data-card-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+
+.data-card-body {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.data-card-icon {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 8px;
+}
+
+/* ── Mobile: cards go to bottom ───────────────────────────── */
+
+@media (max-width: 767px) {
+  .feature-card {
+    position: fixed;
+    bottom: var(--sp-5);
+    left: 50%;
+    transform: translateX(-50%) translateY(12px);
+    max-width: calc(100vw - var(--sp-6));
+    width: 100%;
+  }
+
+  .feature-card.visible {
+    animation: fcFloatMobile 4s ease-in-out infinite;
+  }
+
+  @keyframes fcFloatMobile {
+    0%,100% { transform: translateX(-50%) translateY(0px); }
+    50%      { transform: translateX(-50%) translateY(-4px); }
+  }
+}

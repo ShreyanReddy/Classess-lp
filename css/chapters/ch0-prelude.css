@@ -1,0 +1,83 @@
+/* ============================================================
+   CLASSESS AI — CHAPTER 0: PRELUDE
+   White screen with etched frosted logo
+   ============================================================ */
+
+#ch0 {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-ch0);
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+/* ── Logo Container ───────────────────────────────────────── */
+
+.ch0-logo {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  position: relative;
+}
+
+.ch0-logo-word {
+  font-family: var(--font);
+  font-size: clamp(52px, 9.5vw, 110px);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  line-height: 1;
+
+  /* Etched frosted glass effect on white */
+  background: linear-gradient(148deg,
+    #AEAAA6 0%,
+    #C8C4C0 20%,
+    #B4B0AC 40%,
+    #CECAC6 58%,
+    #AEAAA6 78%,
+    #C2BEBC 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter:
+    drop-shadow(0 2px 0 rgba(255,255,255,1))
+    drop-shadow(0 -1px 1px rgba(120,115,110,0.38));
+
+  position: relative;
+}
+
+/* Shimmer sweep overlay */
+.ch0-logo-word::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255,255,255,0.6) 50%,
+    transparent 70%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  opacity: 0;
+  animation: shimmer 3.6s ease-in-out 1.5s infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0; }
+  45%, 55%  { opacity: 1; }
+}
+
+.ch0-logo-ai {
+  font-family: var(--font);
+  font-size: clamp(17px, 3vw, 40px);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: #C0BCBA;
+  position: relative;
+  top: -4px;
+}

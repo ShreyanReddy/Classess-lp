@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <!-- Sky base — deep dawn indigo -->
+  <rect width="1440" height="900" fill="#1A0F3C"/>
+
+  <!-- Stars (fade out on scroll) -->
+  <g class="ch1-stars">
+    <circle cx="120"  cy="80"  r="1.5" fill="#FFFFFF" opacity="0.9"/>
+    <circle cx="280"  cy="45"  r="1"   fill="#FFFFFF" opacity="0.7"/>
+    <circle cx="380"  cy="110" r="2"   fill="#FFF8E0" opacity="0.8"/>
+    <circle cx="520"  cy="60"  r="1"   fill="#FFFFFF" opacity="0.6"/>
+    <circle cx="640"  cy="30"  r="1.5" fill="#FFFFFF" opacity="0.9"/>
+    <circle cx="760"  cy="90"  r="1"   fill="#FFF8E0" opacity="0.7"/>
+    <circle cx="880"  cy="50"  r="2"   fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="980"  cy="120" r="1"   fill="#FFFFFF" opacity="0.5"/>
+    <circle cx="1100" cy="40"  r="1.5" fill="#FFF8E0" opacity="0.9"/>
+    <circle cx="1220" cy="70"  r="1"   fill="#FFFFFF" opacity="0.7"/>
+    <circle cx="1340" cy="100" r="2"   fill="#FFFFFF" opacity="0.6"/>
+    <circle cx="200"  cy="150" r="1"   fill="#FFFFFF" opacity="0.5"/>
+    <circle cx="460"  cy="170" r="1.5" fill="#FFF8E0" opacity="0.6"/>
+    <circle cx="700"  cy="140" r="1"   fill="#FFFFFF" opacity="0.7"/>
+    <circle cx="950"  cy="165" r="1.5" fill="#FFFFFF" opacity="0.5"/>
+    <circle cx="1160" cy="145" r="1"   fill="#FFF8E0" opacity="0.6"/>
+    <circle cx="60"   cy="200" r="1"   fill="#FFFFFF" opacity="0.4"/>
+    <circle cx="330"  cy="210" r="1.5" fill="#FFFFFF" opacity="0.5"/>
+    <circle cx="590"  cy="195" r="1"   fill="#FFFFFF" opacity="0.4"/>
+    <circle cx="840"  cy="220" r="1.5" fill="#FFF8E0" opacity="0.5"/>
+    <circle cx="1060" cy="200" r="1"   fill="#FFFFFF" opacity="0.4"/>
+    <circle cx="1290" cy="185" r="1.5" fill="#FFFFFF" opacity="0.5"/>
+  </g>
+
+  <!-- ── Sunrise Arc System ──────────────────────────────── -->
+  <!-- All arcs centered at cx=720 cy=920 (below viewport)  -->
+  <!-- Clipped to upper portion — only the arc crests show  -->
+  <defs>
+    <clipPath id="sky-clip">
+      <rect x="0" y="0" width="1440" height="714"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#sky-clip)">
+    <!-- Arc 1 — outermost, deepest burnt orange -->
+    <ellipse cx="720" cy="920" rx="1180" ry="742" fill="#B83E18"/>
+    <!-- Arc 2 -->
+    <ellipse cx="720" cy="920" rx="960"  ry="608" fill="#D45A28"/>
+    <!-- Arc 3 -->
+    <ellipse cx="720" cy="920" rx="760"  ry="480" fill="#F07838"/>
+    <!-- Arc 4 -->
+    <ellipse cx="720" cy="920" rx="580"  ry="368" fill="#F4924A"/>
+    <!-- Arc 5 -->
+    <ellipse cx="720" cy="920" rx="418"  ry="264" fill="#FFB84A"/>
+    <!-- Arc 6 — innermost, brightest gold -->
+    <ellipse cx="720" cy="920" rx="268"  ry="168" fill="#FFD166"/>
+  </g>
+
+  <!-- ── Sun ─────────────────────────────────────────────── -->
+  <g id="ch1-sun" transform="translate(720, 420)">
+    <!-- Halo — flat circle, very low opacity -->
+    <circle class="sun-halo" cx="0" cy="0" r="98" fill="#FFE580" opacity="0.3"/>
+    <!-- Disc -->
+    <circle class="sun-disc" cx="0" cy="0" r="62" fill="#FFF5A0"/>
+    <!-- Core — static, brightest -->
+    <circle cx="0" cy="0" r="46" fill="#FFFCE0"/>
+    <!-- Sun rays — 8 flat lines -->
+    <g fill="#FFE566" opacity="0.7">
+      <rect x="-1.5" y="-90"  width="3" height="18" rx="1.5" transform="rotate(0)"/>
+      <rect x="-1.5" y="-90"  width="3" height="18" rx="1.5" transform="rotate(45)"/>
+      <rect x="-1.5" y="-90"  width="3" height="18" rx="1.5" transform="rotate(90)"/>
+      <rect x="-1.5" y="-90"  width="3" height="18" rx="1.5" transform="rotate(135)"/>
+      <rect x="-1.5" y="-90"  width="3" height="18" rx="1.5" transform="rotate(180)"/>
+      <rect x="-1.5" y="-90"  width="3" height="18" rx="1.5" transform="rotate(225)"/>
+      <rect x="-1.5" y="-90"  width="3" height="18" rx="1.5" transform="rotate(270)"/>
+      <rect x="-1.5" y="-90"  width="3" height="18" rx="1.5" transform="rotate(315)"/>
+    </g>
+  </g>
+</svg>

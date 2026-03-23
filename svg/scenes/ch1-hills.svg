@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <!-- Near hills — brighter green. Includes the dirt path. -->
+
+  <!-- Hill layer — near hills -->
+  <path d="
+    M-20,900
+    L-20,660
+    Q100,580 220,630
+    Q340,680 440,600
+    Q540,530 640,580
+    Q740,630 840,570
+    Q940,510 1040,560
+    Q1140,610 1240,560
+    Q1350,510 1460,545
+    L1460,900 Z
+  " fill="#2E6E3E"/>
+
+  <!-- Mid grass band -->
+  <path d="
+    M-20,900 L-20,720
+    Q160,700 320,710
+    Q480,720 640,700
+    Q800,680 960,700
+    Q1120,720 1280,700
+    Q1380,690 1460,695
+    L1460,900 Z
+  " fill="#3E8844"/>
+
+  <!-- Dirt path — curves from bottom-left toward center-right -->
+  <path d="
+    M340,900
+    Q380,820 420,760
+    Q460,710 510,685
+    Q560,668 620,665
+    Q680,662 740,668
+    Q800,675 860,690
+    Q920,705 980,720
+    L1020,900 Z
+  " fill="#C8986A"/>
+
+  <!-- Path edges -->
+  <path d="
+    M340,900 Q380,820 420,760 Q460,710 510,685 Q560,668 620,665
+    Q680,662 740,668 Q800,675 860,690 Q920,705 980,720 L1020,900
+  " fill="none" stroke="#B88858" stroke-width="3"/>
+</svg>

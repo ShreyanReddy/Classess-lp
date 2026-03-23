@@ -1,0 +1,52 @@
+/* ============================================================
+   CLASSESS AI — RESET
+   Box model reset + sensible defaults
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button, a {
+  cursor: none; /* Custom cursor takes over */
+  text-decoration: none;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #F4834A;
+  outline-offset: 3px;
+  cursor: pointer;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}

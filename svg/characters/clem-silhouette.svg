@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-35 -70 70 130" width="70" height="130">
+  <!-- CLEM — Silhouette (Ch8 cliff) — 8 elements, all #0D0B1E -->
+  <!-- Confident standing posture, arms slightly away from body -->
+  <g class="clem-body-group clem-all" id="clem-silhouette">
+    <!-- 1. Head -->
+    <ellipse class="clem-all" cx="0" cy="-42" rx="18" ry="20" fill="#0D0B1E"/>
+
+    <!-- 2. Neck -->
+    <line class="clem-all" x1="0" y1="-22" x2="0" y2="-14"
+          stroke="#0D0B1E" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- 3. Body — straight, confident -->
+    <line class="clem-all" x1="0" y1="-14" x2="0" y2="28"
+          stroke="#0D0B1E" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- 4. Arm A — slightly away from body (natural, not posed) -->
+    <line class="clem-all" x1="0" y1="-4" x2="-18" y2="20"
+          stroke="#0D0B1E" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- 5. Arm B — slightly away from body -->
+    <line class="clem-all" x1="0" y1="-4" x2="18" y2="20"
+          stroke="#0D0B1E" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- 6. Leg A — slight width, planted -->
+    <line class="clem-all" x1="0" y1="28" x2="-10" y2="66"
+          stroke="#0D0B1E" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- 7. Leg B — slight width, planted -->
+    <line class="clem-all" x1="0" y1="28" x2="10" y2="66"
+          stroke="#0D0B1E" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-35 -70 70 115" width="70" height="115">
+  <!-- CLEM — Seated (Ch2, Ch6) — 8 elements -->
+  <g class="clem-body-group" id="clem-seated">
+    <!-- 1. Head — with idle tilt animation class -->
+    <ellipse class="clem-head clem-head-idle clem-all" cx="0" cy="-42" rx="18" ry="20" fill="#F4834A"/>
+
+    <!-- 2. Neck -->
+    <line class="clem-neck clem-all" x1="0" y1="-22" x2="0" y2="-14"
+          stroke="#1A1A1A" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- 3. Body (shorter when seated) -->
+    <line class="clem-body clem-all" x1="0" y1="-14" x2="0" y2="18"
+          stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- 4. Arm A (left) — down toward phone, thumb class for animation -->
+    <line class="clem-arm-a clem-thumb clem-all" x1="0" y1="-4" x2="-20" y2="10"
+          stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- 5. Arm B (right) — raised slightly, reading posture -->
+    <line class="clem-arm-b clem-all" x1="0" y1="-4" x2="18" y2="6"
+          stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- 6. Leg A (left) — horizontal, seated -->
+    <line class="clem-leg-a clem-all" x1="0" y1="18" x2="-28" y2="22"
+          stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- 7. Leg B (right) — horizontal, seated -->
+    <line class="clem-leg-b clem-all" x1="0" y1="18" x2="28" y2="22"
+          stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>
