@@ -132,6 +132,11 @@
 
 /* ── Mobile: cards go to bottom ───────────────────────────── */
 
+@keyframes fcFloatMobile {
+  0%,100% { transform: translateX(-50%) translateY(0px); }
+  50%      { transform: translateX(-50%) translateY(-4px); }
+}
+
 @media (max-width: 767px) {
   .feature-card {
     position: fixed;
@@ -144,10 +149,5 @@
 
   .feature-card.visible {
     animation: fcFloatMobile 4s ease-in-out infinite;
-  }
-
-  @keyframes fcFloatMobile {
-    0%,100% { transform: translateX(-50%) translateY(0px); }
-    50%      { transform: translateX(-50%) translateY(-4px); }
   }
 }

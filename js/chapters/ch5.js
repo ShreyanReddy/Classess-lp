@@ -32,6 +32,25 @@ function _ch5_buildWorld() {
       </g>
     </svg>`;
 
+  const mtnEl = document.getElementById('ch5-l-mtn');
+  if (mtnEl) mtnEl.innerHTML = `
+    <svg viewBox="0 0 4320 900" preserveAspectRatio="xMinYMid slice"
+         style="position:absolute;top:0;left:0;width:300%;height:100%;">
+      <path d="M0,900 L0,520 Q240,380 480,460 Q720,540 960,400 Q1200,260 1440,360
+               Q1680,460 1920,340 Q2160,220 2400,320 Q2640,420 2880,300
+               Q3120,180 3360,280 Q3600,380 3840,260 Q4080,140 4320,240 L4320,900Z"
+            fill="#7A2A0A"/>
+    </svg>`;
+
+  const hillsEl = document.getElementById('ch5-l-hills');
+  if (hillsEl) hillsEl.innerHTML = `
+    <svg viewBox="0 0 4320 900" preserveAspectRatio="xMinYMid slice"
+         style="position:absolute;top:0;left:0;width:300%;height:100%;">
+      <path d="M0,900 L0,640 Q360,580 720,600 Q1080,620 1440,580 Q1800,540 2160,565
+               Q2520,590 2880,560 Q3240,530 3600,555 Q3960,580 4320,545 L4320,900Z"
+            fill="#5A3018"/>
+    </svg>`;
+
   const groundEl = document.getElementById('ch5-l-ground');
   if (groundEl) groundEl.innerHTML = `
     <svg viewBox="0 0 4320 900" preserveAspectRatio="xMinYMid slice"
